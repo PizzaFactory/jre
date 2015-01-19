@@ -10,7 +10,7 @@
 
   <groupId>jp.pizzafactory.jre</groupId>
   <artifactId>parent</artifactId>
-  <version>1.7.72.M20150112-0737</version>
+  <version>1.7.72-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>JRE for PizzaFactory</name>
@@ -126,7 +126,7 @@
         </dependencies>
         <configuration>
           <strictBinIncludes>false</strictBinIncludes>
-          <format>'v'yyyyMMdd-HHmm</format>
+          <format>'I'yyyyMMdd-HHmm</format>
           <timestampProvider>jgit</timestampProvider>
           <jgit.ignore>
             pom.xml
