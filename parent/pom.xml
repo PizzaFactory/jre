@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <prerequisites>
+    <maven>3.0</maven>
+  </prerequisites>
+
+  <groupId>jp.pizzafactory.jre</groupId>
+  <artifactId>parent</artifactId>
+  <version>1.7.72.M20150112-0737</version>
+  <packaging>pom</packaging>
+
+  <name>JRE for PizzaFactory</name>
+
+  <licenses>
+    <license>
+      <name>Eclipse Public License 1.0</name>
+      <url>https://www.eclipse.org/legal/epl-v10.html</url>
+      <comments>Excepts Oracle's Java binaries</comments>
+    </license>
+    <license>
+      <name>Oracle Binary Code License</name>
+      <url>http://www.oracle.com/technetwork/java/javase/terms/license/index.html</url>
+      <comments>Covers Oracle's Java binaries</comments>
+    </license>
+  </licenses>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <tycho-version>0.22.0</tycho-version>
+    <tycho-extras.version>0.22.0</tycho-extras.version>
+    <jre.version>1.7.72</jre.version>
+    <tycho-groupid>org.eclipse.tycho</tycho-groupid>
+    <pizzafactory-version>8.5</pizzafactory-version>
+  </properties>
+
+  <scm>
+    <connection>scm:git:git://git@bitbucket.org:pizzafactory/JRE.git</connection>
+  </scm>
+
+  <modules>
+    <module>../jp.pizzafactory.jre.license</module>
+    <module>../jp.pizzafactory.jre.x86_64.win32.win32</module>
+    <module>../jp.pizzafactory.jre.x86.win32.win32</module>
+    <module>../jp.pizzafactory.jre.x86_64.gtk.linux</module>
+    <module>../jp.pizzafactory.jre.x86.gtk.linux</module>
+    <module>../jp.pizzafactory.jre</module>
+    <module>../p2update</module>
+  </modules>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>${tycho-groupid}</groupId>
+        <artifactId>target-platform-configuration</artifactId>
+        <version>${tycho-version}</version>
+        <configuration>
+          <resolver>p2</resolver>
+          <ignoreTychoRepositories>true</ignoreTychoRepositories>
+          <environments>
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86</arch>
+            </environment>
+            <environment>
+              <os>win32</os>
+              <ws>win32</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>linux</os>
+              <ws>gtk</ws>
+              <arch>x86</arch>
+            </environment>
+            <environment>
+              <os>linux</os>
+              <ws>gtk</ws>
+              <arch>x86_64</arch>
+            </environment>
+            <environment>
+              <os>macosx</os>
+              <ws>cocoa</ws>
+              <arch>x86_64</arch>
+            </environment>
+          </environments>
+          <target>
+            <artifact>
+              <artifactId>product-target</artifactId>
+            </artifact>
+          </target>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>${tycho-groupid}</groupId>
+        <artifactId>tycho-maven-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <extensions>true</extensions>
+      </plugin>
+
+      <plugin>
+        <groupId>${tycho-groupid}</groupId>
+        <artifactId>tycho-versions-plugin</artifactId>
+        <version>${tycho-version}</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.eclipse.tycho</groupId>
+        <artifactId>tycho-packaging-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.eclipse.tycho.extras</groupId>
+            <artifactId>tycho-buildtimestamp-jgit</artifactId>
+            <version>${tycho-extras.version}</version>
+          </dependency>
+          <dependency>
+            <groupId>org.eclipse.tycho.extras</groupId>
+            <artifactId>tycho-sourceref-jgit</artifactId>
+            <version>${tycho-extras.version}</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <strictBinIncludes>false</strictBinIncludes>
+          <format>'v'yyyyMMdd-HHmm</format>
+          <timestampProvider>jgit</timestampProvider>
+          <jgit.ignore>
+            pom.xml
+          </jgit.ignore>
+          <sourceReferences>
+            <generate>true</generate>
+          </sourceReferences>
+          <archive>
+            <addMavenDescriptor>false</addMavenDescriptor>
+          </archive>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>3.4</version>
+        <configuration>
+          <locales>en,ja</locales>
+          <inputEncoding>UTF-8</inputEncoding>
+          <outputEncoding>UTF-8</outputEncoding>
+          <reportPlugins>
+            <!-- Project Info -->
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-project-info-reports-plugin</artifactId>
+              <version>2.7</version>
+              <reportSets>
+                <reportSet>
+                  <reports>
+                    <report>index</report>
+                    <report>license</report>
+                    <!--
+                    <report>dependencies</report>
+                    <report>dependency-convergence</report>
+                    <report>dependency-management</report>
+                    <report>plugins</report>
+                    <report>plugin-management</report>
+                    <report>cim</report>
+                    <report>issue-tracking</report>
+                    <report>mailing-list</report>
+                    <report>project-team</report>
+                    <report>scm</report>
+                    <report>summary</report>
+                    -->
+                  </reports>
+                </reportSet>
+              </reportSets>
+            </plugin>
+          </reportPlugins>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>2.6.1</version>
+        <configuration>
+          <excludeDefaultDirectories>false</excludeDefaultDirectories>
+          <filesets>
+            <fileset>
+              <directory>${basedir}</directory>
+              <includes>
+                <include>p2.inf</include>
+                <include>jre/**</include>
+              </includes>
+            </fileset>
+          </filesets>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <distributionManagement>
+    <repository>
+      <id>builder.monami-ya.com</id>
+      <name>Monami-ya Release Repository</name>
+      <url>http://builder.monami-ya.com:8080/nexus/content/repositories/releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>builder.monami-ya.com</id>
+      <name>Monami-ya Snapshot Repository</name>
+      <url>http://builder.monami-ya.com:8080/nexus/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
+</project>

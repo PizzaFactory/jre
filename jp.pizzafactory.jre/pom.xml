@@ -1,0 +1,12 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>jp.pizzafactory.jre</artifactId>
+  <packaging>eclipse-feature</packaging>
+  <name>Parent Feature</name>
+  <parent>
+    <groupId>jp.pizzafactory.jre</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.7.72.M20150112-0737</version>
+    <relativePath>../parent/pom.xml</relativePath>
+  </parent>
+</project>

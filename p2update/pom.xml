@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+    xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>jp.pizzafactory.jre</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.7.72.M20150112-0737</version>
+    <relativePath>../parent/pom.xml</relativePath>
+  </parent>
+
+  <artifactId>p2update</artifactId>
+  <packaging>eclipse-repository</packaging>
+
+  <name>P2 Update Site Generator</name>
+  <description>p2 Update Site for mRDT</description>
+
+  <licenses>
+    <license>
+      <name>Eclipse Public License 1.0</name>
+      <url>https://www.eclipse.org/legal/epl-v10.html</url>
+    </license>
+  </licenses>
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>${tycho-groupid}</groupId>
+        <artifactId>tycho-p2-plugin</artifactId>
+        <version>${tycho-version}</version>
+        <executions>
+          <execution>
+            <id>categorization</id>
+            <phase>package</phase>
+            <goals>
+              <goal>category-p2-metadata</goal>
+            </goals>
+          </execution>
+        </executions>
+        <configuration>
+          <metadataRepositoryName>PizzaFactory ${pizzafactory-version}</metadataRepositoryName>
+          <artifactRepositoryName>PizzaFactory ${pizzafactory-version}</artifactRepositoryName>
+          <compressRepository>true</compressRepository>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>${tycho-groupid}</groupId>
+        <artifactId>tycho-p2-repository-plugin</artifactId>
+        <version>${tycho-version}</version>
+      </plugin>
+
+    </plugins>
+  </build>
+</project>

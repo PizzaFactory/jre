@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="jp.pizzafactory.jre.x86_64.win32.win32"
+      label="Oracle JRE (win32.win32.x86_64)"
+      version="1.7.72.M20150112-0737"
+      provider-name="Oracle (Packed by PizzaFactory Project.)"
+      license-feature="jp.pizzafactory.jre.license"
+      license-feature-version="1.7.72.M20150112-0737">
+
+   <description>
+      Oracle JRE for PizzaFactory
+   </description>
+
+   <copyright>
+      Copyright © 1993, 2014, Oracle and/or its affiliates.
+All rights reserved.
+   </copyright>
+
+</feature>

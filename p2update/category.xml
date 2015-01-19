@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/jp.pizzafactory.jre_0.0.0.qualifier.jar" id="jp.pizzafactory.jre">
+      <category name="Oracle JRE for PizzaFactory"/>
+   </feature>
+   <feature url="features/jp.pizzafactory.jre.license_0.0.0.qualifier.jar" id="jp.pizzafactory.jre.license">
+      <category name="Oracle JRE for PizzaFactory"/>
+   </feature>
+   <feature url="features/jp.pizzafactory.jre.x86.win32.win32_0.0.0.qualifier.jar" id="jp.pizzafactory.jre.x86.win32.win32">
+      <category name="Oracle JRE for PizzaFactory"/>
+   </feature>
+   <feature url="features/jp.pizzafactory.jre.x86_64.win32.win32_0.0.0.qualifier.jar" id="jp.pizzafactory.jre.x86_64.win32.win32">
+      <category name="Oracle JRE for PizzaFactory"/>
+   </feature>
+   <feature url="features/jp.pizzafactory.jre.x86.gtk.linux_0.0.0.qualifier.jar" id="jp.pizzafactory.jre.x86.gtk.linux">
+      <category name="Oracle JRE for PizzaFactory"/>
+   </feature>
+   <feature url="features/jp.pizzafactory.jre.x86_64.gtk.linux_0.0.0.qualifier.jar" id="jp.pizzafactory.jre.x86_64.gtk.linux">
+      <category name="Oracle JRE for PizzaFactory"/>
+   </feature>
+   <category-def name="Oracle JRE for PizzaFactory" label="Oracle JRE for PizzaFactory"/>
+</site>

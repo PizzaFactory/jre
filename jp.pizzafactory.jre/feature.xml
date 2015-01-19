@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="jp.pizzafactory.jre"
+      label="Java Runtime Envrionment for PizzaFactory"
+      version="1.7.72.M20150112-0737"
+      provider-name="PizzaFactory Project">
+
+   <description url="http://www.pizzafactory.jp/">
+      The parent feature : Java Runtime Environment for PizzaFactory.
+   </description>
+
+   <copyright>
+      Copyright (C) 2014 PizzaFactory Project.
+   </copyright>
+
+   <license>
+      EPL-1.0
+   </license>
+
+   <includes
+         id="jp.pizzafactory.jre.x86.win32.win32"
+         version="0.0.0"
+         optional="true"
+         os="win32"
+         ws="win32"
+         arch="x86"/>
+
+   <includes
+         id="jp.pizzafactory.jre.x86_64.win32.win32"
+         version="0.0.0"
+         optional="true"
+         os="win32"
+         ws="win32"
+         arch="x86_64"/>
+
+   <includes
+         id="jp.pizzafactory.jre.x86.gtk.linux"
+         version="0.0.0"
+         optional="true"
+         os="linux"
+         ws="gtk"
+         arch="x86"/>
+
+   <includes
+         id="jp.pizzafactory.jre.x86_64.gtk.linux"
+         version="0.0.0"
+         optional="true"
+         os="linux"
+         ws="gtk"
+         arch="x86_64"/>
+
+</feature>
