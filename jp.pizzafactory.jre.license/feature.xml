@@ -2,7 +2,7 @@
 <feature
       id="jp.pizzafactory.jre.license"
       label="Oracle Binary Code License Agreement for the Java SE Platform Products and JavaFX"
-      version="1.7.72.M20150112-0737"
+      version="1.7.72.qualifier"
       provider-name="Packed by PizzaFactory Project">
 
    <description url="http://www.pizzafactory.jp/">
