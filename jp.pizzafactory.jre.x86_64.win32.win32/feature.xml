@@ -2,10 +2,10 @@
 <feature
       id="jp.pizzafactory.jre.x86_64.win32.win32"
       label="Oracle JRE (win32.win32.x86_64)"
-      version="1.7.72.qualifier"
+      version="1.7.72.M20150119-0614"
       provider-name="Oracle (Packed by PizzaFactory Project.)"
       license-feature="jp.pizzafactory.jre.license"
-      license-feature-version="1.7.72.qualifier">
+      license-feature-version="1.7.72.M20150119-0614">
 
    <description>
       Oracle JRE for PizzaFactory
