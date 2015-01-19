@@ -10,7 +10,7 @@
 
   <groupId>jp.pizzafactory.jre</groupId>
   <artifactId>parent</artifactId>
-  <version>1.7.72.M20150119-0614</version>
+  <version>1.7.72-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>JRE for PizzaFactory</name>

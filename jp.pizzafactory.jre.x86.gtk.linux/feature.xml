@@ -2,10 +2,10 @@
 <feature
       id="jp.pizzafactory.jre.x86.gtk.linux"
       label="Oracle JRE (linux.gtk.x86)"
-      version="1.7.72.M20150119-0614"
+      version="1.7.72.qualifier"
       provider-name="Oracle (Packed by PizzaFactory Project.)"
       license-feature="jp.pizzafactory.jre.license"
-      license-feature-version="1.7.72.M20150119-0614">
+      license-feature-version="1.7.72.qualifier">
 
    <description>
       Oracle JRE for PizzaFactory
