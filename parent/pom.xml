@@ -30,8 +30,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <tycho-version>0.22.0</tycho-version>
-    <tycho-extras.version>0.22.0</tycho-extras.version>
+    <tycho-version>0.24.0</tycho-version>
+    <tycho-extras.version>0.24.0</tycho-extras.version>
     <jre.version>1.8.65</jre.version>
     <tycho-groupid>org.eclipse.tycho</tycho-groupid>
     <github.global.oauth2Token>${env.GH_TOKEN}</github.global.oauth2Token>
@@ -88,11 +88,6 @@
               <arch>x86_64</arch>
             </environment>
           </environments>
-          <target>
-            <artifact>
-              <artifactId>product-target</artifactId>
-            </artifact>
-          </target>
         </configuration>
       </plugin>
 
