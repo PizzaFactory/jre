@@ -1,0 +1,18 @@
+language: java
+jdk:
+- oraclejdk8
+script:
+- if [[ "x$TRAVIS_BRANCH" == "xmaster" && "x$TRAVIS_PULL_REQUEST" == "xfalse" ]]; then GOAL=deploy; else GOAL=install; fi
+- echo "Goal is " $GOAL
+- mvn -f parent/pom.xml clean $GOAL
+after_success:
+- git clone --depth=1 -b gh-pages https://${GH_TOKEN}@github.com/PizzaFactory/model-asam.git gh-pages
+- cd gh-pages
+- if [ "x$TRAVIS_PULL_REQUEST" == "xfalse" && "x$TRAVIS_BRANCH" == "xmaster" ]; then mvn process-resources install; fi
+env:
+  global:
+  - MAVEN_OPTS=-Xmx1024m
+  - PIZZAFACTORY_VERSION=8.5
+  - GIT_COMMITTER_NAME="Masaki Muranaka"
+  - GIT_COMMITTER_EMAIL="monaka@monami-ya.jp"
+  - secure: "c8SbOK6nQWtclMFv6q8+vNXAhQC8RDpGYOE39aMaSD+d8Y3uhFbrYQ+67opkn8Y5FvphcIYIHezOGJefqmCKu1yDImkH9LcQVTaU/lyA6+yaQOgpv7xBd8bu5scHL9eleWdEVg4iSHSa0mUJ15r6Hj9sOSOjWY1m0gDoWYQ9Qiw="
