@@ -127,7 +127,7 @@
         </dependencies>
         <configuration>
           <strictBinIncludes>false</strictBinIncludes>
-          <format>'I'yyyyMMdd-HHmm</format>
+          <format>'R'yyyyMMdd-HHmm</format>
           <timestampProvider>jgit</timestampProvider>
           <jgit.ignore>
             pom.xml
