@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>jp.pizzafactory.jre</groupId>
+  <artifactId>jp.pizzafactory.jre.x86_64.win32.win32</artifactId>
+  <versioning>
+    <versions>
+      <version>1.8.65-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20160120061457</lastUpdated>
+  </versioning>
+</metadata>
