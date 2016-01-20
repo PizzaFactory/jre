@@ -15,7 +15,7 @@
   <packaging>eclipse-repository</packaging>
 
   <name>P2 Update Site Generator</name>
-  <description>p2 Update Site for mRDT</description>
+  <description>p2 Update Site for PizzaFactory/JRE</description>
 
   <licenses>
     <license>
@@ -41,8 +41,8 @@
           </execution>
         </executions>
         <configuration>
-          <metadataRepositoryName>PizzaFactory ${pizzafactory-version}</metadataRepositoryName>
-          <artifactRepositoryName>PizzaFactory ${pizzafactory-version}</artifactRepositoryName>
+          <metadataRepositoryName>PizzaFactory JRE</metadataRepositoryName>
+          <artifactRepositoryName>PizzaFactory JRE</artifactRepositoryName>
           <compressRepository>true</compressRepository>
         </configuration>
       </plugin>
