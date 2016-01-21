@@ -2,7 +2,7 @@
 <feature
       id="jp.pizzafactory.jre"
       label="Java Runtime Envrionment for PizzaFactory"
-      version="1.7.72.qualifier"
+      version="1.8.65.qualifier"
       provider-name="PizzaFactory Project">
 
    <description url="http://www.pizzafactory.jp/">

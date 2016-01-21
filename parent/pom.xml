@@ -15,6 +15,14 @@
 
   <name>JRE for PizzaFactory</name>
 
+  <repositories>
+    <repository>
+      <id>monami-ya-public</id>
+      <name>Nexus on monami-ya.com</name>
+      <url>http://builder.monami-ya.com:8080/nexus/content/groups/public</url>
+    </repository>
+  </repositories>
+
   <licenses>
     <license>
       <name>Eclipse Public License 1.0</name>
@@ -30,11 +38,10 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <tycho-version>0.22.0</tycho-version>
-    <tycho-extras.version>0.22.0</tycho-extras.version>
+    <tycho-version>0.24.0</tycho-version>
+    <tycho-extras.version>0.24.0</tycho-extras.version>
     <jre.version>1.8.65</jre.version>
     <tycho-groupid>org.eclipse.tycho</tycho-groupid>
-    <github.global.oauth2Token>${env.GH_TOKEN}</github.global.oauth2Token>
     <pizzafactory-version>8.5</pizzafactory-version>
   </properties>
 
@@ -88,11 +95,6 @@
               <arch>x86_64</arch>
             </environment>
           </environments>
-          <target>
-            <artifact>
-              <artifactId>product-target</artifactId>
-            </artifact>
-          </target>
         </configuration>
       </plugin>
 
@@ -182,45 +184,6 @@
       </plugin>
 
       <plugin>
-        <groupId>com.github.github</groupId>
-        <artifactId>site-maven-plugin</artifactId>
-        <version>0.12</version>
-        <configuration>
-          <message>Maven artifacts for ${project.version}</message>
-          <noJekyll>true</noJekyll>
-          <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
-          <branch>refs/heads/gh-pages</branch>
-          <repositoryName>jre</repositoryName>
-          <repositoryOwner>PizzaFactory</repositoryOwner>
-          <merge>true</merge>
-        </configuration>
-        <executions>
-          <!-- run site-maven-plugin's 'site' target as part of the build's normal 
-            'deploy' phase -->
-          <execution>
-            <id>m2repo</id>
-            <configuration>
-              <includes>
-                <include>**/*</include>
-              </includes>
-              <path>m2repo</path>
-            </configuration>
-            <goals>
-              <goal>site</goal>
-            </goals>
-            <phase>deploy</phase>
-          </execution>
-          <execution>
-            <id>site</id>
-            <goals>
-              <goal>site</goal>
-            </goals>
-            <phase>site</phase>
-          </execution>
-        </executions>
-      </plugin>
-
-      <plugin>
         <artifactId>maven-clean-plugin</artifactId>
         <version>2.6.1</version>
         <configuration>
@@ -241,10 +204,14 @@
 
   <distributionManagement>
     <repository>
-      <id>internal.repo</id>
-      <name>Temporary Staging Repository</name>
-      <url>file://${project.build.directory}/mvn-repo</url>
+      <id>builder.monami-ya.com</id>
+      <name>Monami-ya Release Repository</name>
+      <url>http://builder.monami-ya.com:8080/nexus/content/repositories/releases/</url>
     </repository>
+    <snapshotRepository>
+      <id>builder.monami-ya.com</id>
+      <name>Monami-ya Snapshot Repository</name>
+      <url>http://builder.monami-ya.com:8080/nexus/content/repositories/snapshots/</url>
+    </snapshotRepository>
   </distributionManagement>
-
 </project>
