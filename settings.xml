@@ -1,0 +1,9 @@
+<settings>
+  <servers>
+    <server>
+      <id>builder.monami-ya.com</id>
+      <username>${env.USERNAME}</username>
+      <password>${env.PASSWORD}</password>
+    </server>
+  </servers>
+</settings>
