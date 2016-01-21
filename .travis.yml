@@ -1,0 +1,15 @@
+language: java
+jdk:
+- oraclejdk8
+script:
+- if [[ "x$TRAVIS_BRANCH" == "xmaster" && "x$TRAVIS_PULL_REQUEST" == "xfalse" ]]; then GOAL=deploy; else GOAL=install; fi
+- echo "Goal is " $GOAL
+- mvn -s settings.xml -f parent/pom.xml clean $GOAL
+env:
+  global:
+  - MAVEN_OPTS=-Xmx1024m
+  - PIZZAFACTORY_VERSION=8.5
+  - GIT_COMMITTER_NAME="Masaki Muranaka"
+  - GIT_COMMITTER_EMAIL="monaka@monami-ya.jp"
+  - secure: "ifhRKoYqeeGqBK1l5tCYSgZagdQGElHuEcjlbb1ptHd64ebTeHPwiMSZf3ai1kwJudzMw6EkbuQXI/r4kSHK4u5D5H32Op55cqQnm0urT16C7zTZv9kCKZYYcKkkLOCj8jszt0DRbRndnFtJmTUTB77dVbxLZ/YRWomGI/2cEOQ="
+  - secure: "bjlldF7rwncjoYDGRW5nBMgM/jNZ3WLSK5czXYrT8VmuCKdhkz0Sf3Yyq8kP6gd4ijOTv0IMJQemnUW1MRyFIw75TqGVwYx8D36x2URUptBAsU5dkvjUtna2SPh2s0kf2DYjxIKqkaJzrpDP5MewiM0xwcduRaBGNlPf2M9JMcQ="
